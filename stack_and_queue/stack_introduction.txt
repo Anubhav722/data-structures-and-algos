@@ -1,0 +1,6 @@
+ADT - Abstract Data Type
+We only talk about the operations/features.
+We do not go into implementation details.
+So define the data structure only as a mathematical or logical model.
+
+Follows LIFO(LAST IN FIRST OUT)

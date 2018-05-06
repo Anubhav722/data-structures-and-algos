@@ -1,0 +1,22 @@
+
+# Binary Search is a Divide and Conquer algorithm.
+
+# Three cases arise while performing binary search.
+
+Let us consider we need to find x in the sorted array A.
+
+Case 1: x == A[mid]
+
+Case 2: x < A[mid]
+
+Case 3: x > A[mid]
+
+We have `start_index` and `end_index`.
+
+where, mid = (start_index + end_index)/2
+
+# Time Complexity
+
+Best Case: O(1)
+
+Worst Case: O(logn)

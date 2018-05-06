@@ -1,0 +1,8 @@
+ADT
+Follows FIFO(FIRST IN FIRST OUT)
+
+Operations:
+	1. Enqueue or insert
+	2. Dequeue or remove or delete
+	3. peek
+	4. isEmpty

@@ -1,0 +1,10 @@
+# See the mathematical conversion from coding school on youtube.
+
+
+# Converting a binary number (base 2) to base 10 format in python.
+
+int('11111111', 2)
+
+# Converting a base 10 number to base 2 in python
+
+"{0:b}".format(number)

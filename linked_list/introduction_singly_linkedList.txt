@@ -1,0 +1,46 @@
+
+We have to traverse the linked list to access any particular element.
+Time taken to access the elements of the linked list is proportional to the size of the linked list.
+So the time complexity is O(n).
+Data is stored in non-contiguous block of memory and each block of memory is called a node.
+
+
+Insertion will also have time complexity of O(n)
+We have to travel the linked list.
+
+
+### Arrays vs. Linked Lists
+
+1. Cost of accessing an element: 
+	array: constant time O(n)
+
+	linked list: we keep only the address of first node(head).
+				 Time Complexity: O(n)
+
+2. Memory requirements:
+	array: Fixed size
+		   Can have unused memory.
+		   No memory for pointer variables.
+		   Memory may not be available as large block.
+
+	linked list: No fixed size.
+				 No unused memory.
+				 Extra memory for pointer variables.
+				 Memory may be available as multiple small blocks.
+
+3. Cost of inserting an element.
+	array: a) at beginning: O(n)
+		   b) at end : O(1) # since we need to shift all the elements to the right.
+		   c) at middle: O(n)
+
+	linked list: a) at beginning: O(1)
+				 b) at end: O(n)
+				 c) at middle: O(n)
+
+4: Ease of use:
+	array: Easier
+
+	linked list: More prone to errors
+
+
+

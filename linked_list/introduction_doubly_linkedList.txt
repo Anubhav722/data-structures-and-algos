@@ -1,0 +1,1 @@
+It has two links. One for `next node` and the other for `previous node`.
