@@ -1,0 +1,27 @@
+### can be represented by two dynamic arrays.
+1. vertex list
+2. edge list
+
+edges: class Edge {
+	string startVertex;
+	string endVertex;
+}
+
+if the graph is weighted
+
+edges: class Edge {
+	string startVertex;
+	string endVertex;
+	int weight;
+}
+
+
+### Another way to store graph can be a 2d array.
+
+Considered good for dense graph i.e. graph having edges close to v**2 (where v is the vertices).
+Sparse graph should not be implemented using this method. (far less from v**2 edges.)
+
+Finding adjacent elements to a given node: O(v)
+Finding if two nodes are connected or not : O(1) + O(v)
+
+If we use hash table to store the vertices and it's respected array index. then the above time complexity can be reduced to O(1)

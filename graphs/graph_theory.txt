@@ -1,0 +1,74 @@
+A graph (G) is an ordered pair of a set of (V) vertices and a set of edges (E).
+
+-----------
+|G = (V, E) |
+-----------
+
+ORDERED PAIR (a, b)
+
+(a, b) is not equal to (b, a).
+they can only be equal if a = b
+
+unordered pait is represented as {a, b}
+
+{a, b} = {b, a}
+
+
+EDGES OF GRAPH
+
+1. directed edge - connection can be one way (ordered pair)
+2. undirected edge - connection can be two way (unordered pair)
+
+GRAPHS CAN BE CLASSIFIED ON THE BASIS OF GRAPHS. (directed graphs and undirected graphs)
+
+TREES ALWAYS HAVE DIRECTED EDGES (one of the connection would be origin and the other the destination)
+
+EXAMPLES WHERE graph is implemented.
+
+1. Social network (like facebook).
+ A user would be a node in the graph and the edges will be connecting him to a friend (undirected graph)
+ User suggestions usually come via graph (friends of friends)
+
+ Similar question could be: Find all the nodes having length of shortest path from a given node equal to 2
+
+
+2. Interlinked web pages on the internet (WWW)
+ is direct represented graph. A web page that would have a unique address or url would be the node in a graph.
+
+ So for example if I have put a hyperlink on my web page I can go to the web page (wikipedia) for instance.
+ But wikipedia hasn't given hyperlink to come back to my page.
+
+3. Search engines (google) use web crawling.
+ Web crawling is basically graph traversal or in simpler words, act of visiting all the nodes in a graph
+
+----------------------------------------------------------------------
+WEIGHTED AND UNWEIGHTED GRAPHS
+
+WEIGHTED EDGES - we associate some weight to the edges.
+
+UNWEIGHTED GRAPHS - a weighted graph with all edges having weight = 1 unit
+
+|V| -> no of vertices
+|E| -> no of edges
+
+An edge is called a self loop if it involves only 1 vertex.
+If both endpoints of the edge are same then it's called self loop.
+
+An edge is called a multi edge if it occurs more than once in a graph.
+we can have a multi edge in both directed and undirected graph.
+-----------------------------------------------------------------------
+
+
+Maximum no. of edges in a directed graph with n vertices (n) would be equal to = n * (n -1) | TRUE ONLY IF THERE IS NO SELF LOOP OR MULTI EDGE LOOP
+
+Maximum no. of edges in a undirected graph with n vertices (n) would be equal to = (n * (n -1)) / 2 | TRUE ONLY IF THERE IS NO SELF LOOP OR MULTI EDGE LOOP
+
+A walk (path also) in a graph is a sequence of vertices where each adjacent pair in the sequence is connected by an edge.
+
+A path is called a simple path if no vertices (and thus no edges) are repeated.
+
+Trail: A walk in which no edges are repeated
+
+Strongly connected graph: If there is a path from any vertex to any other vertices.
+
+Closed walk: Starts and ends at the same vertex.
