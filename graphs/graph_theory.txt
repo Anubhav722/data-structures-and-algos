@@ -9,7 +9,7 @@ ORDERED PAIR (a, b)
 (a, b) is not equal to (b, a).
 they can only be equal if a = b
 
-unordered pait is represented as {a, b}
+unordered pair is represented as {a, b}
 
 {a, b} = {b, a}
 
@@ -72,3 +72,4 @@ Trail: A walk in which no edges are repeated
 Strongly connected graph: If there is a path from any vertex to any other vertices.
 
 Closed walk: Starts and ends at the same vertex.
+
