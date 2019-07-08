@@ -1,0 +1,54 @@
+CREDITS: https://www.youtube.com/watch?v=qYhRvH9tJKw&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX&index=6
+
+
+Microservices are a hot topic in system design interviews. It is important to know why we use them instead of monolithic systems. The short answer is: Scalability. The detailed one would be:
+
+1) Microservices are easier to reason about/design for a complicated system.
+2) They allow new members to train for shorter periods and have less context before touching a system.
+3) Deployments are fluid and continuous for each service.
+4) They allow decoupling service logic on the basis of business responsibility
+5) They are more available as a single service having a bug does not bring down the entire system. This is called a single point of failure.
+6) Individual services can be written in different languages.
+7) The developer teams can talk to each other through API sheets instead of working on the same repository, which requires conflict resolution.
+8) New services can be tested easily and individually. The testing structure is close to unit testing compared to a monolith.
+
+Monoliths are favorable when:
+1) The technical/developer team is very small
+2) The service is simple to think of as a whole.
+3) The service requires very high efficiency, where network calls are avoided as much as possible.
+4) All developers must have context of all services.
+
+
+
+Monolith Advantage / Microservices disadvantage.
+1. Transaction management.  
+2. One does not have to deal with multiple technology stacks.
+3.There is no need to maintain code at the same level for all the services. 
+   You don't need to pass on a jar to other services in order to enable resue of code.
+4. Latency (as mentioned in the video)
+
+
+Microservices advantages
+1. No single point of failure.
+2. You can use the correct technology stack for the required microservice.
+3. Decentralized architecture.
+4. Decentralized data management.
+5. No need to redeploy the whole application. Deployment is faster and easier.
+6.Your microservices should be designed across products. SOA is designed around features. This way of thinking is more customer centric.
+
+
+
+Regarding micro-services, I would like to add a few pointers.
+1. Even with Larger Systems, sometimes micro-services may not be always a good fit. For example, in stream processing systems where processing is centered around per record based processing and micro service calls would worsen the performance.
+
+2. Deployment of micro-services is far more complicated than monoliths.  Because usually with Monoliths, it's a single unit of deployment(Eg: war file if WebApps) but with microservices depending on the scale and grain of the micro-services, there will be N number of deployments needed. It becomes difficult to keep track of the status of each service and in turn, knowing the readiness of the overall system will be a challenge. 
+
+3. Microservices are a great fit for mobile and web applications but when it comes to Big-Data world, it would complicate the overall process. For example, In the Web applications, we mostly deal with Web Server,  Database and its easier to containerize them but when it comes to distributed systems containerizing them will be a challenge.
+
+I am not against of micro-services but  wanted to list down few scenarios where micro-services may not be a great fit.
+
+
+
+
+
+https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith

@@ -1,0 +1,11 @@
+Key differences b/w vertical scaling and horizontal scaling
+
+	HORIZONTAL SCALING 				|		VERTICAL SCALING
+									|
+1.  Load balancing reqd.			|		not applicable
+2.	Resilient (High availability)	|		Single point of failure.
+3.	Network calls b/w servers(RPC).	|		Inter process communication
+	(a bit slower)					|		(faster)
+4.	Data inconsistency issues		|		Consistent data
+	can occur						|
+5.	Scales well as users incr.		|		Hardware limit

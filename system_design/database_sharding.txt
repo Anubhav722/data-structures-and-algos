@@ -1,0 +1,13 @@
+CREDITS: https://www.youtube.com/watch?v=5faMjKuB9bc&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX&index=7
+
+Sharding a database is a common scalability strategy used when designing server side systems. The server side system architecture uses concepts like sharding to make systems more scalable, reliable and performant.
+
+Sharding is horizontal partitioning of data according to a shard key. This shard key determines which database the entry to be persisted is sent to. Some common strategies for this are reverse proxies.
+
+Database interviews ask for concepts like sharding to make databases more performant and available. This makes horizontal partitioning a logical choice
+
+https://stackoverflow.com/questions/18302773/what-are-horizontal-and-vertical-partitions-in-database-and-what-is-the-differen
+https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6
+https://www.quora.com/What-is-the-difference-between-consistent-hashing-and-sharding-in-a-distributed-system
+
+https://www.educative.io/collection/5668639101419520/5649050225344512?affiliate_id=4793322061168640
