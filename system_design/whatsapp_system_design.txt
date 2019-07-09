@@ -1,0 +1,45 @@
+FEATURES THAT CAN BE IMPLEMENTED:
+
+1. Group messaging
+2. Sent -> delivered -> read reciepts
+3. Online / Last seen
+4. Image sharing.  ---------- refer tinder video
+5. Chats are temporary/permanent
+6. One to one chat
+
+
+
+feature 6. ONE TO ONE CHAT
+multiple clients will be establishing a connection to the multiple GATEWAY INTERFACE.
+
+for ex. user A is connected to box 1 (gateway) and user B is connected to box 2 (gateway).
+user A wants to send message to user B.
+
+We should not be keeping the above connection information in the gateway interface because we want to have as many connections as possible and storing the storing the info that which user is connected to what box. Also a lot of duplication will occur in this process.
+
+We can keep the info of the user being connected to diff box in a different microservice. `SESSION MICROSERVICE`.
+There will be multiple servers for session microservice.
+
+When a user A tries to send a message to user B they actually ask for `sendMessage(B)`. 
+The gateway receives this message from user A and sends it to the session service (which is indirectly a router).
+The gateway then looks for the user B and which box it is connected to and then sends the message to the box and then user B.
+
+feature 2. Sent -> delivered > read reiepts
+
+When the user A sends the message to `gateway service` and then to `session service` the session service reverts back to the user A that the message has been sent.
+
+When the user B receives the message then a message is triggered to the gateway service with which it is connected to and then to session services to gateway service with which user A is connected to user A. Hence the message has been delivered.
+
+Figure out how read receipts work. (using the above mentioned flow).
+
+feature 3: ONLINE / LAST SEEN
+
+We can have a last seen microservice which will have two fields such as `user_id` and `last_seen`.
+Whenever a user makes any activity the `last_seen_timestamp` will be updated in the table.
+
+Basically there are two kinds of activity that the client does:
+1. User activity
+2. App generated activity
+
+https://www.youtube.com/watch?v=vvhC64hQZMk&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX&index=11&t=191s
+
