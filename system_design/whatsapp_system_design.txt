@@ -42,4 +42,5 @@ Basically there are two kinds of activity that the client does:
 2. App generated activity
 
 https://www.youtube.com/watch?v=vvhC64hQZMk&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX&index=11&t=191s
-
+https://spectrum.ieee.org/tech-talk/computing/software/how-facebooks-software-engineers-prepare-messenger-for-new-years-eve
+http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html
