@@ -1,0 +1,155 @@
+TINDER ARCHITECTURE:
+
+1. Store profiles 
+(images) - 5 images/user
+
+2. Recommend matches
+(no. of active users do we have?)
+
+3. Note matches
+no. of active users * (10**-3)
+
+4. Direct messaging
+will be enabled when only matched.
+
+
+
+feature 1. starting with storing profiles (images)
+how are we going to be storing the images like a file or a blob?
+
+file vs blob (binary large object)			in the database
+
+gurantees that a database gives you are:
+i. Mutability (can easily mutate the rows in that entry)  ---- this is not reqd. for storing images of the file instead of updating the image we can easily create a new image and link the object with the new one.
+
+ii. Transaction gurantees. --- we won't be performing atomic transactions on the image.
+
+iii. Indexes (mainly to improve the search capability)  --- indexes can help in searching the profile but when it comes to storing the file (which we are more concerned about) it becomes useless.
+
+iv. Access control
+
+
+
+So instead of storing the file in the database we should store it in Distributed File System (DFS).
+
+so we are going to have ```profile_id, image_id, image_url```
+
+
+
+FEATURE DESIGN 1
+
+INTERACTION WITH THE CLIENTS
+
+client registers with the profile server (using 2 factor authentication, email service)
+the client is then added to the database.
+
+to update the client profile we have to authenticate the request. ways:
+1. In the monolithic server, we have different kinds of mechanisms (tokens) via which we can authenticate the user.
+
+2. In the above approach, if a new service is created, everytime client will have to send tokens to authenticate the request sent by the user. So for each service a lot of duplicated code will be written.
+
+To counter this we can have a `gateway` to prevent such code duplication. And the client always talks to the gateway.
+Gateway does one thing essentially, takes the client request asks the `profile service` if the particular user is authenticated or not. So the profile service has information about the user and returns the response accordingly.
+If the request is authenticated, the gateway will direct the request to the correct service.
+
+
+https://sdtimes.com/apis/securing-microservices-the-api-gateway-authentication-and-authorization/
+
+
+The images can be either stored in profile service or some other service.
+But we consider that images can be used afterwards for machine learning, computer vision.
+So storing images on a different service is the way to go.
+We can call it `image service`. So in a way we perform heavy computations (lots of images) this can come in handy.
+
+The image service will be having it's own database consisting of ```profile_id, image_id, image_url```.
+Again images will be stored in DFS.
+
+
+
+FEATURE DESIGN 4
+
+DIRECT MESSAGING
+
+message from user_id_1 to user_id_2
+
+client-server communication protocol ---- HTTP PROTOCOL
+peer-to-peer protocol   ------ XMPP PROTOCOL
+
+XMPP protocol will be a connection (websocket, TCP) with the `Gateway Interface`
+
+So there will be connection_id which will be linked to the user_id.
+
+It would be better if we have `session services`. This `session service` would be storing the `connection_id`, `user_id`
+
+
+FEATURE DESIGN 3
+
+NOTING RECOMMENDATIONS
+
+Here are two possibilities, we can either store the data (matches) on the client side or the server.
+One of the cons of storing the data on the client side is data loss can occur (for ex. client uninstalls the app.)
+So it would be better to store the data on the server side (containing absolute truth).
+
+
+For this purpose we can have a `matcher service` which will be containing of  ```id, user_id, user_id``` (faster search results bcuz of indexing).
+Again sessions service will be linked to the matcher service.
+
+FEATURE DESIGN 2
+
+RECOMMENDATION SYSTEM
+
+based on ```gender, age group, location``` which will be inside the profile service.
+A lot of people would try to come to a conclusion that why not put indexes on all three.
+But we cannot have multiple indexes or data sorted in multiple ways.
+
+In this case for profile service we could use a nosql database like cassandra (good at querying)
+
+Available solutions to solve this problem
+
+1. Have a distributed database like cassandra/dynamodb.
+2. Sharding can be performed in case of RDBMS (Horizontal partitioning)
+   Partitioning can be done on the basis of name:
+   all users having name in the range (A-J) will go to node no. 36.
+   all users having name in the range (K-P) will go to node no. 79.
+
+We can still have a master/slave architecture.
+So per partition we can have a master and slaves
+
+So there is going to be a recommendation service. It pulls out the profiles for a particular location.
+It can store ```user_id, current location```
+
+
+
+
+
+
+
+
+
+We design the system architecture of Tinder. Tinder is an app used for dating and socializing. Designing these apps starts with clarifying the system requirements. In an interview, Tinder has multiple requirements.
+
+When designing the system, we will be drawing logical components and defining their interactions with other services based on the microservice architecture. We assume that any internal details can be handled with our proir knowledge of system design concepts. Check the reference section for a set of links.
+
+The Tinder system has four requirements: storing profiles, recommendations, noting matches and chatting with matches. Storing profiles is trivial except for the image storage, where we argue on BLOB vs File storage. The distributed file architecture seems best when storing images.
+
+Direct Messaging or chatting with matches can be done using the XMPP protocol, which uses web sockets to have peer to peer communications between client and server. Each connection is built over TCP, ensuring that the connection is maintained. The session microservice can send messages to the receiver based on connection to user mappings.
+
+Our system is decoupled as much as possible. We try to maintain accept and reject information on the client. On swiping left or right, the client can note the action and avoid showing the same user again, perhaps using bloom filters.
+
+The server has a validation engine called the matcher microservice, which notes matches and allows or disallows chat between two users.
+
+The final requirement of recommendations needs city wise partitioning on the user data. This is acheived using NoSQL databases like Cassandra or Amazon Dynamo. The other option is to use relational databases with horizontal partitioning. The concept is now refered to as sharding.
+
+If you have any doubts, suggestions or feedback, I love to hear them below. This system is by no means complete, but it is enough for an hour long interview.
+
+Disclaimer: The video does not contain or suggest the internal implementation of Tinder. The system we design is purely imaginary and has no links with the real app. I am sure the engineers at Tinder have done better than this!
+
+
+ARCHITECTURE DIAG: https://pbs.twimg.com/media/D0tmpOKU0AEE_CW.jpg:large
+
+
+https://www.educative.io/collection/5668639101419520/5649050225344512?affiliate_id=4793322061168640
+https://www.akamai.com/us/en/resources/content-distribution-network.jsp
+https://en.wikipedia.org/wiki/Content_delivery_network
+https://www.thewebdevcoach.com/blog/2019-04-19-system-design-tinder/
+

@@ -6,8 +6,36 @@ Sharding is horizontal partitioning of data according to a shard key. This shard
 
 Database interviews ask for concepts like sharding to make databases more performant and available. This makes horizontal partitioning a logical choice
 
+
+
+My own explanation:
+We divide the whole data based on a key shard (for ex. tinder might be using city to distribute data across the shards)
+This type of partitioning which uses some sort of key to partition the data into pieces and allocate that to different database servers is called horizontal partitioning.
+1. Data consistency is important here.
+2. Availability
+
+PROBLEMS:
+1. joins across shards (then the query needs to go to different shards) then pull out data and then join the data across the network which is very expensive.
+2. The shards are inflexible (they can't be increased or decreased in the number). (Consistent hashing can help with this problem) i.e fixed nnumber of shards.
+
+To overcome the above problem what we do is take a shard which has too much data in it and then dynamically break into pieces. (mini shards) This is called hierarchial sharding.
+
+
+BEST PRACTICES:
+1. Create indexes on the shards. This index can be on a completely different attribute compared to the shard key.
+The read performance, and write as well goes up.
+
+2. If one of the shards fail. we can have a master slave architecture. whenever there is a write request it is always on the master (it is the most updated copy.)
+In case the master fails, the slaves choose a master from amongst themselves.
+
+
+
 https://stackoverflow.com/questions/18302773/what-are-horizontal-and-vertical-partitions-in-database-and-what-is-the-differen
 https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6
 https://www.quora.com/What-is-the-difference-between-consistent-hashing-and-sharding-in-a-distributed-system
 
 https://www.educative.io/collection/5668639101419520/5649050225344512?affiliate_id=4793322061168640
+
+
+ACTUAL IMPLEMENTATION OF SHARDING IN POSTGRES:
+https://blog.dbi-services.com/sharding-with-postgresql/
