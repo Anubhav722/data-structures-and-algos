@@ -1,0 +1,45 @@
+SQL:
+
+TABLE 1
+___________________________________________
+| id | name	        | address |	age | role |	
+| 123| john doe		|  23	  |	30	| SDE  |
+|	 |				|		  |		|	   |
+____________________________________________
+
+TABLE 2: for address which is a foreignkey
+
+_______________________________________________
+| address_id | city 	|	country	| District |
+|	23		 |	munich	|	germany	|		   |
+|			 |			|			|		   |
+________________________________________________
+
+
+
+
+NOSQL: JSON FORMAT DATA
+
+{"id": 123,
+ "name": "john doe",
+ "address": {"id": 23,
+ 			 "city": "munich",
+ 			 "country": "germany"},
+ "age": 30,
+ "role": "SDE"
+}
+
+PROS
+1. when there is an insertion all the fields are inserted together.
+2. all the relevant data is contained together in one blob. (no joins required)
+3. The schema is flexible (changeable).
+4. no need to perform any locks on the database while adding a new column as in sql database.
+5. They have horizontal partitioning in built.
+6. helpful in getting metrics/aggregations for ex. avg age.
+
+CONS:
+1. Not built for updates (delete + insert). consistency is a problem (ACID not guaranteed).
+2. Transactions are not effectively possible, since ACID is not guaranteed. (Financial systems don't use nosql db)
+3. They are not read optimized. (comparatively slower)
+4. relations are not implicit.
+5. joins are hard in this case.

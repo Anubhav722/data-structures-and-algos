@@ -1,0 +1,24 @@
+Whenever we have a database we want to have a replica of the database. (To avoid single point of failure)
+We can copy the data from the parent database into the replica in two ways:
+
+1. Synchronously
+	Whenever there is going to be an update on the database it is going to be sending a message to the replica (logs)
+	So the master gets the write sql query and sends it to the slave.
+
+2. Asynchronously 
+	PROS: (not too much load on the database. not continuosly pinging the parent database server for an update)
+	CONS: (data consistency is not maintained)
+
+
+Write operations always happen on the master.
+
+If the write operations can happen on the slave also then it's a `peer-to-peer relation`. There is going to be propagation to and forth between the nodes. In this case there is a big con: What happens if the connection between the database fails. (no communication happens). This can lead to split brain problem.
+The split brain problem can be solved by adding a third node to the original architecture.
+Look up for `distributed consensus`. in short it is a way in which multiple nodes agree on a particular value. (2pc is a very popular protocol, 3pc, MVCC (Multi version concurrency control which is used by postgres), SAGA protocol)
+
+
+PROS OF USING MASTER SLAVE ARCHITECTURE.
+1. Keeps the replica of the master database.
+2. Scale out your read operations.
+3. Can add multiple slaves.
+4. Can perform sharding.
