@@ -1,0 +1,65 @@
+there are two cases where cache can be used:
+
+1. when you're querying for some commonly used data. (for ex. profile)
+2. to avoid computations (avg. age of all users in your system)
+3. avoid load on a database
+
+REASON TO CACHE:
+1. save network calls.
+2. avoid re computations
+3. reduce db load
+
+
+need to understand when we should make an entry in the cache and when to evict data out of the cache.
+This is called a cache policy. 
+There are multiple policies one can follow:
+1. LRU Cache
+2. LFU Cache
+3. Sliding window based policies.
+
+
+CONS OF USING CACHE:
+1. Poor data eviction policy. Every time asking the cache if it has some result but it doesn't (cache miss). This results in extra calls.
+2. inputting and outputting the data into the cache without ever using the results. (data thrashing)
+3. data inconsistency
+
+
+Now where should we place the cache.
+The cache can be placed close to the database or it can be placed close to the servers.
+There's benefits for both and drawbacks for both.
+
+PROS OF HAVING CACHE CLOSER TO THE SERVER (ON SERVER ITSELF):
+1. it's faster here
+2. simpler to implement
+3. data inconsistency chances across different servers
+
+PROS OF HAVING GOBAL CACHE (distributed global cache:
+1. data consistency across servers
+
+
+TYPES OF CACHES:
+1. Write through cache. (can't implement it for financial/passwords)
+	First update cache and then push it to the database.
+	(for ex. when we are making an update to our profile, we check if the data exists in cache, if yes we update cache first and then push the update to the database)
+
+	CONS:
+		What if we had multiple servers then the problem would be that the cache won't be updated in other servers.
+		So we can't implement it.
+
+2. Write back caches. (can implement it for financial/passwords)
+	We push the update directly to the database and then we make an update to the cache if it exists.
+
+	CONS:
+
+
+
+So what we do here is take a hybrid of both the types of caches.
+We update the cache on one server and wait for 10-15 seconds and then push to database.
+The database then updates the other server's cache.
+
+https://www.educative.io/collection/5668639101419520/5649050225344512?affiliate_id=4793322061168640
+
+http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html
+
+https://github.com/google/guava/wiki/CachesExplained
+https://github.com/ben-manes/caffeine
