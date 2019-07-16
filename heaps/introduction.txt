@@ -94,6 +94,7 @@ print("The 3 smallest numbers in list are : ",end="")
 print(heapq.nsmallest(3, li1))
 
 SOME INTERESTING LINKS
+https://www.youtube.com/watch?v=t0Cq6tVNRBA
 https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
 https://towardsdatascience.com/data-structure-heap-23d4c78a6962
 https://runestone.academy/runestone/books/published/pythonds/Trees/BinaryHeapImplementation.html

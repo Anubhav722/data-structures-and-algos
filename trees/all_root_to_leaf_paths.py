@@ -14,7 +14,7 @@ def printAllPaths(root):
 
 def printPaths(root, path, pathLen):
     if not root:
-        return 
+        return
 
     if len(path) > pathLen:
         path[pathLen] = root.val
@@ -22,7 +22,7 @@ def printPaths(root, path, pathLen):
         path.append(root.val)
 
     pathLen = pathLen + 1
-    
+
     if root.left is None and root.right is None:
         return path
     else:

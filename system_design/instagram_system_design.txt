@@ -1,0 +1,74 @@
+FEATURES:
+
+I. Store/Get images
+cheaper storage,create a file system and create a CDN over it.
+
+
+II. like, comment on image
+images are nothing but a post.
+questions to ask: can we comment on a comment. ? can you like a comment?
+we can like a comment.
+
+
+ER Diagram of a single feature:
+
+``````````````````````````
+THINK ABOUT THE QUERIES
+1. Get all the posts of a user
+2. Get the count of likes on a post.
+3. 
+
+```````````````````````````
+
+LIKES:
+
+1. like_id
+2. activity_id
+3. user_id
+4. timestamp
+5. active/inactive
+6. type_field = (post, comment)
+
+POST:
+
+1. post_id
+2. text
+3. image_url
+4. timestamp
+5. user_id
+
+# the next point is an example of poor design. shouldn't have a likes column since it is an aggregation.
+5. likes (integerfield, default=0) ( whenever a like is added we increment the count)
+
+
+COMMENT:
+
+1. comment_id
+2. text
+3. timestamp
+
+
+
+
+# the next point is an example of poor design. shouldn't have a likes column since it is an aggregation.
+5. likes (integerfield, default=0) (whenever a like is added we increment the count here)
+
+
+ACTIVITY:
+
+1. activity_id
+2. likes
+
+
+
+III. follow someone
+
+`````````````````````````
+which users follow me, count
+whom am i following, count
+`````````````````````````
+1. Follower id
+2. followee_id
+3. timestamp
+
+IV. publish a news feed

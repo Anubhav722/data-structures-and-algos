@@ -1,0 +1,2 @@
+https://medium.com/netflix-techblog/active-active-for-multi-regional-resiliency-c47719f6685b
+https://medium.com/@adhorn/patterns-for-resilient-architecture-part-3-16e8601c488e
