@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable?page=1&tab=active#tab-top
+
+https://stackoverflow.com/questions/1085709/what-does-synchronized-mean
+
+https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/
+
+https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java

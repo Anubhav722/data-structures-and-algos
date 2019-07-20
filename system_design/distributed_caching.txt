@@ -37,7 +37,7 @@ PROS OF HAVING GOBAL CACHE (distributed global cache:
 1. data consistency across servers
 
 
-TYPES OF CACHES:
+TYPES OF CACHES WRITES:
 1. Write through cache. (can't implement it for financial/passwords)
 	First update cache and then push it to the database.
 	(for ex. when we are making an update to our profile, we check if the data exists in cache, if yes we update cache first and then push the update to the database)
