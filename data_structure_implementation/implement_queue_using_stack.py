@@ -1,5 +1,6 @@
 # https://www.geeksforgeeks.org/queue-using-stacks/
 
+
 class Queue:
     def __self__(self):
         self.s1 = []
@@ -11,7 +12,7 @@ class Queue:
             self.s2.append(self.s1[-1])
             self.s1.pop()
             # push item into self.s1
-            self.s1.append(x)
+        self.s1.append(x)
 
         while len(self.s2) != 0:
             self.s1.append(self.s2[-1])

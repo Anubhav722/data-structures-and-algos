@@ -21,7 +21,7 @@ Monoliths are favorable when:
 
 
 Monolith Advantage / Microservices disadvantage.
-1. Transaction management.  
+1. Transaction management.
 2. One does not have to deal with multiple technology stacks.
 3.There is no need to maintain code at the same level for all the services. 
    You don't need to pass on a jar to other services in order to enable resue of code.

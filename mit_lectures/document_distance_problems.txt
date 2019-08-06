@@ -1,0 +1,12 @@
+Document distance problem
+
+d(D1, D2):
+- document - sequence of words
+- words - string of alphanumeric characters
+- idea - shared words b/w D1 & D2. (document distance)
+
+- can also think of document as a vector.
+	D[w] = frequency
+	number of times word `w` occurs in document D
+
+http://6.006.scripts.mit.edu/~6.006/spring08/wiki/index.php?title=Document_Distance_Problem_Definition
