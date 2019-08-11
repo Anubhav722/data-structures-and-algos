@@ -1,0 +1,187 @@
+ubuntu
+rapyuta - user
+admin098 - password
+
+
+set of questions to be done:
+https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/ - DONE
+Given a log file, each line begins with some IP address, find the most frequent IP address.
+https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+continuation: (https://www.geeksforgeeks.org/find-maximum-in-a-stack-in-o1-time-and-o1-extra-space/)
+
+https://leetcode.com/problems/string-compression/ - (space complexity reqd. in soln.)
+https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/ - DONE (floyd cycle detection)
+https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
+https://www.geeksforgeeks.org/find-minimum-moves-reach-target-infinite-line/ - revision reqd. (copy)
+https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/
+https://www.geeksforgeeks.org/queries-counts-array-elements-values-given-range/ - DONE
+https://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/
+https://www.geeksforgeeks.org/decode-string-recursively-encoded-count-followed-substring/ - revision reqd. (copy)
+https://www.geeksforgeeks.org/compute-average-two-numbers-without-overflow/ -
+```return (a // 2) + (b // 2) + ((a % 2 + b % 2) // 2) ```
+https://www.geeksforgeeks.org/number-flips-make-binary-string-alternate/ - (copy)
+https://www.geeksforgeeks.org/queue-using-stacks/ - done
+https://www.geeksforgeeks.org/convert-ternary-expression-binary-tree/
+https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
+https://www.geeksforgeeks.org/find-number-of-positional-elements/
+https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/ - min heap (revision reqd.) copy
+https://www.interviewbit.com/problems/largest-distance-between-nodes-of-a-tree/
+Which Data Structure would you use to implement a dictionary?(Trie)
+https://www.geeksforgeeks.org/find-union-and-intersection-of-two-unsorted-arrays/ - done (sort both arrays)
+https://www.interviewbit.com/problems/edit-distance/
+https://www.geeksforgeeks.org/dynamic-programming-building-bridges/
+https://www.geeksforgeeks.org/reverse-a-linked-list/ - done
+https://www.geeksforgeeks.org/goldman-sachs-recruitment-process/
+https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+https://www.geeksforgeeks.org/goldman-sachs-interview-experience/
+https://www.geeksforgeeks.org/find-maximum-possible-stolen-value-houses/
+https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/
+https://www.geeksforgeeks.org/find-number-of-islands/
+https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
+https://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/
+https://www.geeksforgeeks.org/remove-array-end-element-maximize-sum-product/https://www.geeksforgeeks.org/sum-of-all-substrings-of-a-string-representing-a-number/
+
+
+https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
+
+
+object oriented design pattern.
+https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_singleton
+
+
+
+http://www.crazyforcode.com/goldman-sachs-interview-questions-set-2/
+http://www.crazyforcode.com/goldman-sachs-interview-questions-set-1/
+delete a node from binary search tree/ binary tree
+
+
+other sources
+https://news.efinancialcareers.com/uk-en/220502/goldman-sachs-interview-questions
+
+
+
+theory:
+memory allocation concepts (OS)
+Concept of OOPS : Encapsulation, Data Hiding, Abstraction, Polymorphism etc.
+Mutex vs Semaphore
+https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up
+https://hub.packtpub.com/how-does-elasticsearch-work-tutorial/
+
+operating system:
+-- CGROUPS: 1. https://www.linuxjournal.com/content/everything-you-need-know-about-linux-containers-part-i-linux-control-groups-and-process
+2. https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/ch01
+3. https://en.wikipedia.org/wiki/Cgroups
+4. https://linuxcontainers.org/
+5. https://www.geeksforgeeks.org/operating-systems/
+6. https://stackoverflow.com/questions/34820558/difference-between-cgroups-and-namespaces
+
+
+
+
+siddharth questions:
+https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/
+
+
+
+
+https://www.geeksforgeeks.org/goldman-sachs-internship-interview-experience-summer-analyst-on-campus/
+
+SYSTEM DESIGN:
+https://medium.com/@adhorn/patterns-for-resilient-architecture-part-1-d3b60cd8d2b6
+https://medium.com/systems-architectures/walking-the-microservices-path-towards-loose-coupling-few-pitfalls-4067bf5e497a
+https://medium.com/unbabel/your-distributed-monoliths-are-secretly-plotting-against-you-4c1b20324a31
+
+
+- TCP/UDP connection
+- HTTP PROTOCOLS
+- CORS
+- CSRF
+- DEPLOYMENT GUIDE (NGINX AND NETWORKING STUFF.)
+- MICROSERVICES ARCHITECTURE
+- sql vs nosql
+
+
+PREMATURE OPTIMIZATION IS THE ROOT OF ALL EVIL
+
+running schedule:
+celery -A wyngcommerce beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+
+
+/Users/anubhavsingh/Projects/wyng/wyngcommerce/notebooks/demoza/attribute_ratio/size
+
+st_hist_inv=st_hist_inv[st_hist_inv[st_col].isin(store_list)]
+
+st_sales=st_sales[st_sales[st_col].isin(store_list)]
+
+kwargs:
+demoza: ATTRIBUTE_RATIO --> SIZE
+{"nb_type": "attribute_ratio", "nb_subtype": "size", "nb_path": "notebooks/demoza/attribute_ratio/size/Size_Ratio_Calc-Notebook.ipynb", "nb_db_export": ["product_master", "store_master", "current_store_inventory", "daily_sales"], "nb_txn_period": "12 months"}
+
+demoza: FESTIVAL_UPLIFT
+{"nb_type": "festive_uplift", "nb_subtype": "", "nb_path": "notebooks/demoza/festive_uplift/Event Uplift - VDemoza.ipynb", "nb_db_export": ["product_master", "store_master", "current_store_inventory", "daily_sales", "festival_master"], "nb_txn_period": "12 months"}
+
+
+curl https://install.citusdata.com/community/deb.sh | sudo bash
+sudo apt-get -y install postgresql-11-citus-8.1
+sudo pg_conftool 11 main set shared_preload_libraries citus
+sudo pg_conftool 11 main set listen_addresses '*'
+
+
+productmaster: 1: 707s  2: 
+
+daily_sales :-> 1:  527s  2: 374s
+
+
+
+/Users/anubhavsingh/Projects/wyng/wyngcommerce/notebooks/tcns
+
+
+LINKEDIN - 19TH APRIL
+
+durg trek
+
+customer id: 115977107
+password: Stan@121722
+
+
+file_name: range_plan (1).csv
+
+
+company list:
+1. google
+2. Microsoft
+3. amazon
+4. adobe
+5. Flipkart
+6. grab
+7. gojek
+8. jp morgan chase and co.
+9. nuatanix
+10. grofers
+11. zomato
+12. uber
+13. ola
+14. swiggy
+15. tower research capital
+16. 24x7.ai
+17. NetApp
+18. goldman sacchs
+19. walmart
+20. McKinsey
+21. payu
+22. alten calsoft
+23. InMobi
+24. intuit
+25. Atlassian
+26. Qualcomm
+27. facebook
+28. nvidia
+29. 
+
+
+TIME TABLE FOR TODAY (mAY 27th):
+you have no time to give a fuck about anything. you have enjoyed a lot. Fuck everything for now. you are a fucker, motherfucker. 
+That's it no planning required as of now. You need to find your sleep. you need to sleep.
+think of ways to sleep now. today you are not a coder. today you are a different person with a new perception.
+
+I know deep down you are still depressed. but you are the kind of stain that can't be washed away that easy.
