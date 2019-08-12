@@ -50,6 +50,15 @@ https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_sin
 
 
 
+
+https://www.geeksforgeeks.org/word-wrap-problem-dp-19/
+https://www.geeksforgeeks.org/interview-experience-at-flipkart-sd-ii/
+https://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
+
+DYNAMIC PROGRAMMING MOST COMMON QUESTIONS
+https://www.geeksforgeeks.org/top-20-dynamic-programming-interview-questions/
+
+
 http://www.crazyforcode.com/goldman-sachs-interview-questions-set-2/
 http://www.crazyforcode.com/goldman-sachs-interview-questions-set-1/
 delete a node from binary search tree/ binary tree
