@@ -40,7 +40,11 @@ https://www.geeksforgeeks.org/find-number-of-islands/
 https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
 https://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/
 https://www.geeksforgeeks.org/remove-array-end-element-maximize-sum-product/https://www.geeksforgeeks.org/sum-of-all-substrings-of-a-string-representing-a-number/
-
+https://www.geeksforgeeks.org/find-a-fixed-point-in-a-given-array/
+https://www.geeksforgeeks.org/a-boolean-matrix-question/
+https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/
+https://www.geeksforgeeks.org/factorial-large-number/
+https://www.geeksforgeeks.org/find-given-string-can-represented-substring-iterating-substring-n-times/
 
 https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
 
@@ -148,9 +152,6 @@ daily_sales :-> 1:  527s  2: 374s
 LINKEDIN - 19TH APRIL
 
 durg trek
-
-customer id: 115977107
-password: Stan@121722
 
 
 file_name: range_plan (1).csv
