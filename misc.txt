@@ -47,11 +47,11 @@ https://www.geeksforgeeks.org/factorial-large-number/
 https://www.geeksforgeeks.org/find-given-string-can-represented-substring-iterating-substring-n-times/
 
 https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
-
+https://www.geeksforgeeks.org/check-given-graph-tree/
 
 object oriented design pattern.
 https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_singleton
-
+https://www.geeksforgeeks.org/rotate-a-matrix-by-90-degree-in-clockwise-direction-without-using-any-extra-space/s
 
 
 

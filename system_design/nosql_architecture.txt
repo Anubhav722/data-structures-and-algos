@@ -43,3 +43,27 @@ CONS:
 3. They are not read optimized. (comparatively slower)
 4. relations are not implicit.
 5. joins are hard in this case.
+
+
+
+Using a nosql database here.
+{
+	"user_id": {
+		"username": "anubhav",
+		"email": "anubhav@gmail.com",
+		"photos": {
+			"photo_id": {
+				"photoLocation": "http://blah.com",
+				"creation_date": "time"
+			},
+			"photo_id2": {
+				"photoLocation": "http://blah.com",
+				"creation_date": "time"
+			}
+		},
+		"followers": {
+			"user_id2": "profile_link",
+			"user_id3": "profile_link"
+		}
+	}
+}
