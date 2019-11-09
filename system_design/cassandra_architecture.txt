@@ -1,0 +1,32 @@
+OBJECTIVES:
+
+1. Explain the architecture if cassandra
+2. Describe the different layers of cassandra architecture
+3. Explain Gossip protocol
+4. Describe partitioning and snitches
+5. Explain Vnodes and how read and write path works
+6. Describe compaction, anti-entropy and tombstone
+7. Describe repairs in cassandra
+8. Explain Hinted Handoff.
+
+Introduction to cassandra archtecture
+It is a peer to peer architecture.
+
+- The architecture of cassandra contributes to a database that scales and performs with continuous availability.
+- It has a masterless "ring" distributed architecture that is elegant, and easy to setup and maintain.
+- built for scale architecture is capable of handling large amts of data and 1000's of concurrent users/operations per second, across muliple data centers easily.
+
+
+CASSANDRA ARCHITECTURE LAYERS:
+
+- Top layers
+- middle layer
+- core layer
+
+responsibilies
+
+CORE LAYER - messaging service, gossip protocol, cluster state, partitioner, replication
+
+MIDDLE LAYER - commitlog, memtable, SStable, indexes, compaction, 
+
+TOP LAYER - tombstones, hintedhandoff, readrepair, bootstrap, monitoring, admintools 

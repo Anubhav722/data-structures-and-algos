@@ -16,15 +16,18 @@
                      # |                   |
                      # pivot               pivot
 
+# In this case we are taking the rightmost element as the pivot.
 
 def partition(arr, start_index, end_index):
-    pivot = arr[-1]
+    pivot = arr[end_index]
     partition_index = start_index
 
-    for i in range(end_index):
+    for i in range(start_index, end_index):
         if arr[i] <= pivot:
             arr[i], arr[partition_index] = arr[partition_index], arr[i]
             partition_index += 1
+    arr[partition_index], arr[end_index] = arr[end_index], arr[partition_index]
+    return partition_index
 
 
 def quick_sort(arr, start_index, end_index):
@@ -37,3 +40,6 @@ def quick_sort(arr, start_index, end_index):
     # Making a recursive call
     quick_sort(arr, start_index, pivot_index-1)
     quick_sort(arr, pivot_index, end_index)
+    return arr
+
+# quick_sort(arr, 0, len(arr))
